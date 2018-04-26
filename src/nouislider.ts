@@ -23,6 +23,11 @@ export interface NouiFormatter {
     from(value: string): number;
 }
 
+export interface IPips {
+    mode: 'range';
+    density: number;
+}
+
 export class DefaultFormatter implements NouiFormatter {
     to(value: number): string {
         // formatting with http://stackoverflow.com/a/26463364/478584
@@ -74,6 +79,7 @@ export class NouisliderComponent implements ControlValueAccessor, OnInit, OnChan
     @Input() public onKeydown: any;
     @Input() public formControl: FormControl;
     @Input() public tooltips: Array<any>;
+    @Input() public pips: IPips;
     @Output() public change: EventEmitter<any> = new EventEmitter(true);
     @Output() public update: EventEmitter<any> = new EventEmitter(true);
     @Output() public slide: EventEmitter<any> = new EventEmitter(true);
@@ -101,11 +107,11 @@ export class NouisliderComponent implements ControlValueAccessor, OnInit, OnChan
                 min: this.min,
                 max: this.max
             },
-            tooltips: this.tooltips,
+            pips: this.pips
         }));
 
         inputsConfig.format = this.format || this.config.format || new DefaultFormatter();
-        inputsConfig.tooltips = this.tooltips;
+        inputsConfig.tooltips = this.tooltips || this.config.tooltips;
 
         this.slider = noUiSlider.create(
             this.el.nativeElement.querySelector('div'),

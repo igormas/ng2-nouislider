@@ -4,6 +4,10 @@ export interface NouiFormatter {
     to(value: number): string;
     from(value: string): number;
 }
+export interface IPips {
+    mode: 'range';
+    density: number;
+}
 export declare class DefaultFormatter implements NouiFormatter {
     to(value: number): string;
     from(value: string): number;
@@ -28,6 +32,7 @@ export declare class NouisliderComponent implements ControlValueAccessor, OnInit
     onKeydown: any;
     formControl: FormControl;
     tooltips: Array<any>;
+    pips: IPips;
     change: EventEmitter<any>;
     update: EventEmitter<any>;
     slide: EventEmitter<any>;
