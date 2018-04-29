@@ -110,11 +110,11 @@
   &#125;
 &#125;;</pre>
 
-<pre>&lt;nouislider [config]=&quot;someRange2config&quot; [limit]=&quot;10&quot; [(ngModel)]=&quot;someRange2&quot;&gt;&lt;/nouislider&gt;</pre>
+<pre>&lt;nouislider [options]=&quot;someRange2config&quot; [limit]=&quot;10&quot; [(ngModel)]=&quot;someRange2&quot;&gt;&lt;/nouislider&gt;</pre>
 
 <code>someRange2: {{ someRange2 | json }}</code>
 
-<nouislider [config]="someRange2config" [limit]="10" [(ngModel)]="someRange2" style="margin-bottom: 5rem"></nouislider>
+<nouislider [options]="someRange2config" [limit]="10" [(ngModel)]="someRange2" style="margin-bottom: 5rem"></nouislider>
 
 <div class="page-header">
     <h3>Keyboard support</h3>
@@ -140,7 +140,7 @@ someKeyboardConfig: any = &#123;
 &#125;;
 </pre>
 
-<pre>&lt;nouislider [config]=&quot;someKeyboardConfig&quot; [(ngModel)]=&quot;someKeyboard&quot;&gt;&lt;/nouislider&gt;</pre>
+<pre>&lt;nouislider [options]=&quot;someKeyboardConfig&quot; [(ngModel)]=&quot;someKeyboard&quot;&gt;&lt;/nouislider&gt;</pre>
 Select a handle and use arrow keys or page up / page down.
 <div class="event-logger">
     Keboard events (key up, key down):
@@ -148,7 +148,7 @@ Select a handle and use arrow keys or page up / page down.
     <span class="h6 label label-default event-label" [ngClass]="{'label-info': keydownLabelOn}">keydown</span>
 </div>
 <code>someKeyboard: {{ someKeyboard | json }}</code>
-<nouislider [config]="someKeyboardConfig"
+<nouislider [options]="someKeyboardConfig"
             [(ngModel)]="someKeyboard"
             (keyup)="blinkKeyupLabel()"
             (keydown)="blinkKeydownLabel()"
@@ -200,9 +200,9 @@ public someKeyboardConfig2: any = &#123;
 &#125;
 </pre>
 <pre>
-&lt;nouislider [config]=&quot;someKeyboardConfig2&quot; [(ngModel)]=&quot;someKeyboard2&quot; &gt;&lt;/nouislider&gt;
+&lt;nouislider [options]=&quot;someKeyboardConfig2&quot; [(ngModel)]=&quot;someKeyboard2&quot; &gt;&lt;/nouislider&gt;
 </pre>
-<nouislider [config]="someKeyboardConfig2"
+<nouislider [options]="someKeyboardConfig2"
             [(ngModel)]="someKeyboard2"
             style="margin-bottom: 5rem"></nouislider>
 
@@ -219,7 +219,7 @@ public someKeyboardConfig2: any = &#123;
   <h3>With custom formatting</h3>
 </div>
 
-<nouislider [config]="someTimeConfig" [(ngModel)]="someTime" style="margin-bottom: 5rem"></nouislider>
+<nouislider [options]="someTimeConfig" [(ngModel)]="someTime" style="margin-bottom: 5rem"></nouislider>
 
 
 <div class="page-header">

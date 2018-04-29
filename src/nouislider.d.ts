@@ -34,6 +34,7 @@ export declare class NouisliderComponent implements ControlValueAccessor, OnInit
     set: EventEmitter<any>;
     start: EventEmitter<any>;
     end: EventEmitter<any>;
+    readonly disabledAttr: boolean;
     private value;
     private onChange;
     private onTouched;
