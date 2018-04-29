@@ -196,9 +196,7 @@ export class NouisliderComponent implements ControlValueAccessor, OnInit, OnChan
     }
 
     setDisabledState(isDisabled: boolean): void {
-        isDisabled
-            ? this.renderer.setAttribute(this.el.nativeElement.childNodes[0], 'disabled', 'true')
-            : this.renderer.removeAttribute(this.el.nativeElement.childNodes[0], 'disabled');
+        this.disabled = !!isDisabled;
     }
 
     private eventHandler = (emitter: EventEmitter<any>, values: string[], handle: number, unencoded: number[]) => {
