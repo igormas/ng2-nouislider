@@ -5,11 +5,11 @@ import {
     EventEmitter,
     forwardRef,
     Input,
-    OnInit,
     OnChanges,
     Output,
     NgModule,
-    Renderer2
+    Renderer2,
+    AfterViewInit
 } from '@angular/core';
 import {
     ControlValueAccessor,
@@ -60,7 +60,7 @@ export class DefaultFormatter implements NouiFormatter {
         }
     ]
 })
-export class NouisliderComponent implements ControlValueAccessor, OnInit, OnChanges {
+export class NouisliderComponent implements ControlValueAccessor, AfterViewInit, OnChanges {
 
     public slider: any;
     public handles: any[];
@@ -93,7 +93,7 @@ export class NouisliderComponent implements ControlValueAccessor, OnInit, OnChan
     constructor(private el: ElementRef, private renderer: Renderer2) {
     }
 
-    ngOnInit(): void {
+    ngAfterViewInit(): void {
         let inputsConfig = JSON.parse(JSON.stringify({
             behaviour: this.behaviour,
             connect: this.connect,

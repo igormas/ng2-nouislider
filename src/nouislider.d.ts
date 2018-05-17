@@ -1,4 +1,4 @@
-import { ElementRef, EventEmitter, OnInit, OnChanges, Renderer2 } from '@angular/core';
+import { ElementRef, EventEmitter, OnChanges, Renderer2, AfterViewInit } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 export interface NouiFormatter {
     to(value: number): string;
@@ -12,7 +12,7 @@ export declare class DefaultFormatter implements NouiFormatter {
     to(value: number): string;
     from(value: string): number;
 }
-export declare class NouisliderComponent implements ControlValueAccessor, OnInit, OnChanges {
+export declare class NouisliderComponent implements ControlValueAccessor, AfterViewInit, OnChanges {
     private el;
     private renderer;
     slider: any;
@@ -43,7 +43,7 @@ export declare class NouisliderComponent implements ControlValueAccessor, OnInit
     private onChange;
     private onTouched;
     constructor(el: ElementRef, renderer: Renderer2);
-    ngOnInit(): void;
+    ngAfterViewInit(): void;
     ngOnChanges(changes: any): void;
     toValues(values: string[]): any | any[];
     writeValue(value: any): void;
