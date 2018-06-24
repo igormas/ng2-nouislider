@@ -2,17 +2,8 @@
   "name": "ng2-nouislider",
   "version": "1.7.6",
   "description": "Angular2 noUiSlider component",
-  "main": "dist/bundles/ng2-nouislider.umd.js",
-  "typings": "dist/ng2-nouislider.d.ts",
-  "scripts": {
-    "contributors": "all-contributors generate",
-    "lint": "tslint src/nouislider.ts",
-    "build": "npm run lint && ngc",
-    "start": "npm run build && webpack-dev-server --host 0.0.0.0",
-    "deploy": "NODE_ENV=prod npm run build && NODE_ENV=prod webpack && gh-pages -d demo",
-    "test": "NODE_ENV=test karma start",
-    "test:ci": "NODE_ENV=test karma start --singleRun"
-  },
+  "main": "bundles/ng2-nouislider.umd.js",
+  "typings": "ng2-nouislider.d.ts",
   "keywords": [
     "angular2",
     "ng2",
@@ -77,9 +68,15 @@
     "@angular/core": "^2.0.0 || ^4.0.0 || ^5.0.0",
     "nouislider": "^9.0.0 || ^10.0.0 || ^11.0.0"
   },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/nouislider.ts"
-    }
+  "module": "fesm5/ng2-nouislider.js",
+  "es2015": "fesm2015/ng2-nouislider.js",
+  "esm5": "esm5/ng2-nouislider.js",
+  "esm2015": "esm2015/ng2-nouislider.js",
+  "fesm5": "fesm5/ng2-nouislider.js",
+  "fesm2015": "fesm2015/ng2-nouislider.js",
+  "metadata": "ng2-nouislider.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
   }
 }
