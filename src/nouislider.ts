@@ -9,7 +9,7 @@ import {
     Output,
     NgModule,
     Renderer2,
-    AfterViewInit
+    OnInit
 } from '@angular/core';
 import {
     ControlValueAccessor,
@@ -32,7 +32,7 @@ export class DefaultFormatter implements NouiFormatter {
     to(value: number): string {
         // formatting with http://stackoverflow.com/a/26463364/478584
         return String(parseFloat(parseFloat(String(value)).toFixed(2)));
-    };
+    }
 
     from(value: string): number {
         return parseFloat(value);
@@ -60,7 +60,7 @@ export class DefaultFormatter implements NouiFormatter {
         }
     ]
 })
-export class NouisliderComponent implements ControlValueAccessor, AfterViewInit, OnChanges {
+export class NouisliderComponent implements ControlValueAccessor, OnInit, OnChanges {
 
     public slider: any;
     public handles: any[];
@@ -93,7 +93,7 @@ export class NouisliderComponent implements ControlValueAccessor, AfterViewInit,
     constructor(private el: ElementRef, private renderer: Renderer2) {
     }
 
-    ngAfterViewInit(): void {
+    ngOnInit(): void {
         let inputsConfig = JSON.parse(JSON.stringify({
             behaviour: this.behaviour,
             connect: this.connect,
